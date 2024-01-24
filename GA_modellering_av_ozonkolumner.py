@@ -24,9 +24,9 @@ lons = ds.variables['lon'][:]
 latselect = np.logical_and(lats>-60, lats<60)
 lonselect = np.logical_and(lons>-135,lons<135)
 
-#Plottning av data
+#Plottning av data och val av tidssteg (0-240)
 plt.figure(figsize=(8, 6))
-contour = plt.contourf(lons, lats, ds.variables["o3col"][120,:,:], levels=35, cmap="nipy_spectral")
+contour = plt.contourf(lons, lats, ds.variables["o3col"][0,:,:], levels=35, cmap="nipy_spectral")
 plt.colorbar(contour, label='µm-atm(mikrometer-atm)')
 
 plt.xlabel('Longitud')
